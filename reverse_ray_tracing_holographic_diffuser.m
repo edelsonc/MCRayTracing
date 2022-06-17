@@ -1,6 +1,11 @@
 %------------------------------------------------------------------------------
 % Simulation settings
 %------------------------------------------------------------------------------
+% add path to 1D ray tracing objects
+objects_file = fullfile(".", "Objects");
+addpath(objects_file);
+
+% MC ray tracing parameters
 iters = 2e5;
 prop_depth = 4;
 
