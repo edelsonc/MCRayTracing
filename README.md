@@ -10,6 +10,12 @@ In this project we take an OOP approach to our ray tracing structure. We have th
 - `Panel1D`
     - Super class for all objects that can have intersections with light rays 
 
+Experiments are then performed by
+1) Defining light sources
+2) Defining objects (e.g. lens, diffusers, etc.)
+3) Running an experiment with `RayTracingExperiment`
+4) Plotting or analyzing results
+
 # Testing
 Testing for each major class is provided in the `Tests` folder. Tests are structured as an individual test file per class. Each test file has multiple function unit tests.
 
