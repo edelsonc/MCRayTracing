@@ -21,6 +21,6 @@ function testGetPropogatedRay(testCase)
     [ray, ray_origin] = screen.get_propogated_ray([-1, 0], [0, 1]);
     assert(all(screen.intersections == [0, 1]))
 
-    [ray, ray_origin] = screen.get_propogated_ray([1, 0], [10, 9])
+    [ray, ray_origin] = screen.get_propogated_ray([1, 0], [10, 9]);
     assert(all(screen.intersections == [0, 1; 10, 9], 'all'))
 end
