@@ -6,7 +6,7 @@ objects_file = fullfile(".", "Objects");
 addpath(objects_file);
 
 % MC ray tracing parameters
-iters = 2e5;
+iters = 1e4;
 prop_depth = 4;
 
 % diode parameters

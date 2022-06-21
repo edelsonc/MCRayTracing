@@ -26,13 +26,12 @@ function testGetPropogatedRay(testCase)
 
     lens = ConvergingLens1D(start, stop, focal_length);
     [ray, ray_origin] = lens.get_propogated_ray([-1, 0], [0, 0]);
-    ray
     assert(all(ray == [-1, 0]))
 
     % horizontal ray
     [ray, ray_origin] = lens.get_propogated_ray([-1, 0], [0, 0.5]);
     % there's a little bit of floating point error that we need to deal with...
-    correct_angle_tol = abs(atan(ray(2) / ray(1)) - atan(0.5/125)) < 1e-12
+    correct_angle_tol = abs(atan(ray(2) / ray(1)) - atan(0.5/125)) < 1e-12;
     assert(correct_angle_tol);
 
     % angled ray test for correct shift
