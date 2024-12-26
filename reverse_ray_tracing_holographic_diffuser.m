@@ -6,7 +6,7 @@ objects_file = fullfile(".", "Objects");
 addpath(objects_file);
 
 % MC ray tracing parameters
-iters = 1e4;
+iters = 1e2;
 prop_depth = 4;
 
 % diode parameters
@@ -82,7 +82,7 @@ for ii = 1:length(light_ys)
     lights = {light_upper, light_lower};
 
     experiment = RayTracingExperiment(lights, objects);
-    experiment.run_experiment(iters, prop_depth);
+    intersections = experiment.run_experiment(iters, prop_depth);
 end
 
 %------------------------------------------------------------------------------
