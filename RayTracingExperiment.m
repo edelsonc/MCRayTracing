@@ -23,7 +23,7 @@ classdef RayTracingExperiment
             n_lights = length(obj.lights);
             n_objs = length(obj.objects);
 
-            all_intersection = nan(n_lights * iters, prop_depth, 2);
+            all_intersections = nan(n_lights * iters, prop_depth, 2);
             for ii = 1:n_lights
                 light = obj.lights{ii};
                 for temp1 = 1:iters
@@ -40,8 +40,7 @@ classdef RayTracingExperiment
                         if isnan(closest_intersect)
                             break
                         end
-                        size(closest_intersect)
-                        all_intersections(temp1, temp2, :) = intersects(:, min_idx);
+                        all_intersections((ii - 1) * iters + temp1, temp2, :) = intersects(:, min_idx);
 
                         [ray, ray_origin] = obj.objects{min_idx}.get_propogated_ray(ray, intersects(:, min_idx)');
                         if isnan(ray)
